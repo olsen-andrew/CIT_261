@@ -1,8 +1,0 @@
-// if statements
-if(params){
-	// do something
-} else if(params){
-	//do something
-} else{
-	//do something else
-}
