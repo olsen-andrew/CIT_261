@@ -4,10 +4,11 @@ function addGalToPage(){
 
 //object constructor for galleries
 var galleries = [];
-function Gallery(name){ 
-	var htmlEl = "<div class='gallery'></div>"
+function Gallery(name, images){ 
+	var htmlEl = "<div class='gallery'></div>";
 
 	this.title = name;
+	this.images = images;
 	this.numSlides = function(){
 
 	};
@@ -24,10 +25,12 @@ if(document.getElementsByClassName){
 
 // onClick -> this function
 var thisGallery = function(){
+	var images = JSON.parse(this.getAttribute("data-images"));
+	
+	console.log(images.files);
 	var galName = this.getAttribute("name");
 	var g = new Gallery(galName);
 	galleries.push(g);
-	console.log(JSON.stringify(galleries));
 }
 
 // add event listeners for each gallery thumb
