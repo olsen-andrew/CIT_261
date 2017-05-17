@@ -12,8 +12,13 @@ var thisGallery = function(){
 	gallery(galName);
 }
 
-var galleries = document.getElementsByClassName('gallery');
-console.log(galleries.length);
+if(document.getElementsByClassName){
+	var galleries = document.getElementsByClassName('gallery');
+} else{
+	alert("Your Browser is Out of Date.");
+}
+
+
 for (var i = 0; i < galleries.length; i++){
 	galleries[i].addEventListener('click',thisGallery,false);
 }
